@@ -152,11 +152,11 @@ def createMashup(name, n, time, outputFileName):
 
 
 import streamlit as st
-name = st.write("Enter singer name: ")
-n = int(st.write("Enter number of songs: "))
-time = int(st.write("Enter duration of each to cut from starting: "))
-outputFileName = st.write("Output filename (must write .mp3): ")
-email = st.write("Enter your email: ")
+name = st.text_input("Enter singer name: ")
+n = int(st.number_input("Enter number of songs: "))
+time = int(st.number_input("Enter duration of each to cut from starting: "))
+outputFileName = st.text_input("Output filename (must write .mp3): ")
+email = st.text_input("Enter your email: ")
 
 createMashup(name, n, time, outputFileName)
 send_email(outputFileName, outputFileName, gmail, email, gmailpwd)
